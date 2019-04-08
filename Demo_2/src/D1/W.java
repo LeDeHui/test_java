@@ -7,4 +7,4 @@ public class W {
 		System.out.println("W");
 	}
 
-}
+}	
