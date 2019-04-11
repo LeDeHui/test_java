@@ -23,7 +23,8 @@ public class TestToString {
 //		Person p2 = new Person();
 		System.out.println(p1.toString());
 		System.out.println(p1);
-		//4.
+		//4.像String类，包装类，File类，date类等，已经实现object类中的toString方法的重写
+		
 		String str1 = new String("BB");
 		String str2 = "AA";
 		System.out.println(str1.toString());
