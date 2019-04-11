@@ -13,21 +13,25 @@ public class TestWrapper {
 		// 基本数据类型--->对应的包装类，调用包装类的构造器
 		Integer i1 = new Integer(i);
 		System.out.println(i1.toString());
-		Float f = new Float("12.3f");
+//		i1 = new Integer("12sfds");
+//		System.out.println(i1.toString());
+
+		// java.lang.NumberFormatException
+		Float f = new Float("12.31f");
 		System.out.println(f.toString());
 		Boolean b1 = new Boolean(b);
 		System.out.println(b1);
 //		对于boolean，当形参为 true是返回true，其他返回false
 		Boolean b3 = new Boolean("trueadas");
 		System.out.println(b3);
-		
+
 		ojbk o1 = new ojbk();
-		System.out.println("$"+o1.b);
-		
-		//包装类-->对应的基本数据类型
+		System.out.println("$" + o1.b);
+
+		// 包装类-->对应的基本数据类型
 	}
 }
 
-class ojbk{
+class ojbk {
 	Boolean b;
 }
