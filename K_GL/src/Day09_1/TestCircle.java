@@ -1,5 +1,5 @@
 package Day09_1;
-//static 的一个应用
+//static 的一个应用;使用静态的变量可以实现累加的效果
 public class TestCircle {
 	public static void main(String[] args) {
 		Cricle c1 = new Cricle(2.0);
@@ -33,7 +33,7 @@ class Cricle {
 		return info;
 	}
 
-	public static void setInfoString(String info) {
+	public static void setInfo (String info) {
 		Cricle.info = info;
 	}
 
