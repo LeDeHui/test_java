@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 //包装类  8种基本数据类型对应的类。此类即为包装类
 //基本数据类型  包装类 String类三者之间的相互装换
 public class TestWrapper {
-	
-	//基本数据类型，包装类与String类之间的转换
+
+	// 基本数据类型，包装类与String类之间的转换
 	@Test
 	public void test2() {
-		//基本数据类型，包装类-->String类
-		//调用STring 类的静态重载valueof（x）方法
+		// 基本数据类型，包装类-->String类
+		// 调用STring 类的静态重载valueof（x）方法
 		int i1 = 10;
 		Integer i2 = i1;
 		String str2 = String.valueOf(i2);
@@ -18,17 +18,15 @@ public class TestWrapper {
 		boolean b1 = true;
 		String str3 = String.valueOf(b1);
 		System.out.println(str3);
-		
-		//String类 --> 基本数据类型，包装类
-		//调用包装类的parseXXX（String Str）方法
+
+		// String类 --> 基本数据类型，包装类
+		// 调用包装类的parseXXX（String Str）方法
 		int i3 = Integer.parseInt(str2);
 		System.out.println(i3);
 		Boolean b2 = Boolean.parseBoolean(str3);
 		System.out.println(b2);
-		
-		
 	}
-	
+
 	// 基本数据类型与包装类的转化
 	@Test
 	public void test1() {
