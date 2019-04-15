@@ -40,3 +40,24 @@ class Singleton {
 	}
 
 }
+/*
+ * class Singleton {
+	// 1.私有化构造器,使得在类的外部不能调用此构造器
+	private Singleton() {
+
+	}
+
+	// 2.在类的内部创建一个类的实例
+	private static Singleton instance = null;
+	static {
+	instance = new Singleton();
+	}
+
+	// 3.私有化此对象,通过公共的方法来调用
+	// 4.此公共的方法,只能通过类来调用,因此设置为static的,同时,类的实例也必须是static申明的
+	public static Singleton getInstance() {
+		return instance;
+	}
+
+}*/
+ 

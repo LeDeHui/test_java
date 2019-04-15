@@ -20,8 +20,8 @@ import javax.print.DocFlavor.STRING;
  **/
 public class TestFinal {
 	public static void main(String[] args) {
-		c c = new C();
-		System.out.println(C.getClass()  + " "+Math.PI);
+		C c = new C();
+		System.out.println(c.getClass()  + " "+Math.PI);
 	}
 
 }
