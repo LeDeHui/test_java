@@ -1,6 +1,5 @@
 package Day10_abstract;
 
-import java.util.Vector;
 
 public class TestVehicle {
 
