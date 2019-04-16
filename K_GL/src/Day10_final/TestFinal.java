@@ -13,7 +13,7 @@ import javax.print.DocFlavor.STRING;
  *此常量在哪里赋值： 
  *	1此常量不能使用默认初始化
  *	2显式的赋值,代码块，构造器
- *变量用 static final修饰。全局变量
+ *变量用 static final修饰。全局变量    比如Math类的PI
  *
  *>与finaly,finalise()区分
  *
@@ -51,7 +51,7 @@ final class A {
 
 }
 
-//class b extends a {
+//class B extends A {
 //
 //}
 class C {
