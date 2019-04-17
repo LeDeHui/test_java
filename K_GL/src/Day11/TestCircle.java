@@ -19,10 +19,10 @@ public class TestCircle {
 		ComparableCircle c1 = new ComparableCircle(2.3);
 		ComparableCircle c2 = new ComparableCircle(2.1);
 		ComparableCircle c3 = new ComparableCircle(2.3);
-		int i1 = c1.compareTo( c2);
-		int i2 = c1.compareTo( c3);
-		System.out.println(i1);
-		System.out.println(i2);
+//		int i1 = c1.compareTo(  c2);
+//		int i2 = c1.compareTo( ( c3);
+//		System.out.println(i1);
+//		System.out.println(i2);
 	}
 }
 
