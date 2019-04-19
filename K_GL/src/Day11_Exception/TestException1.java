@@ -46,12 +46,12 @@ import org.junit.Test;
  * 
  * */
 public class TestException1 {
-	// 编译是异常
+	// 编译时异常
 	@Test
 	public void test6() {
 		FileInputStream fis = null;
 		try {
-			fis = new FileInputStream(new File("hello.txt"));
+			fis = new FileInputStream(new File("hello1.txt"));
 			int b;
 			while ((b = fis.read()) != -1) {
 				System.out.println((char) b);
@@ -61,6 +61,8 @@ public class TestException1 {
 			System.out.println(e1.getMessage());
 		} catch (IOException e2) {
 			System.out.println(e2.getMessage());
+		} catch (Exception e) {
+			System.out.println("OMG");
 		} finally {
 			try {
 				fis.close();

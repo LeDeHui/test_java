@@ -18,11 +18,12 @@ import org.junit.Test;
  * 
  * 
  * */
+
 public class TestExcepction {
 	// ±‡“Î «“Ï≥£
 	@Test
 	public void test6() throws Exception{
-		
+		 
 		FileInputStream fis = new FileInputStream(new File("hello.txt"));
 		int b;
 		while ((b = fis.read()) != -1) {
