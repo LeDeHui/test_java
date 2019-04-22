@@ -75,7 +75,7 @@ class ComparableCircle extends Circle implements CompareOjbect {
 				return 0;
 			}
 		} else {
-			throw new RuntimeException("传入的非ComparableCircle类型，不可比较");
+			 throw new RuntimeException("传入的非ComparableCircle类型，不可比较");
 		}
 
 	}
