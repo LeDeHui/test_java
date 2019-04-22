@@ -5,6 +5,15 @@ package Day12_3_Collection;
  *   >>>弊端：①一旦创建，其长度不可变。  
  *   		  ②真实的数组存放的对象的个数是不可知的
  * 3.集合
+ * 	Collection接口   包List
+ * 		|--List接口:存储有序的,可以重复的元素
+ * 			|--ArrayList(主要的实现类)(Day12_4_List --> TestList)
+ * 			|--LinkedList(对于频繁的插入删除操作,建议使用这个)
+ * 			|--Vector(古老的实现类.线程安全的)
+ * 		|--Set接口:存储无序的,不可以重复的元素
+ * 			|--HashSet,LinkedHashSet,TreeSet
+ * 	Map接口:存储  键-值对的数据
+ * 		|--HashMap,LinkedHashMap,TreeMap,Hashtable(子类:Properties)
  * 
  * 
  * 
@@ -14,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -34,12 +44,28 @@ public class TestCollection {
 		// 10removeALL（Collection coll）：从当前集合中删除包含在coll1中的元素。差集
 		coll.removeAll(coll1);
 		System.out.println(coll);
-		//equals（Object obj）：判断集合中的所有元素是否完全相同
+		//11.equals（Object obj）：判断集合中的所有元素是否完全相同
 		Collection coll2 = new ArrayList();
 		coll2.add(123);
-		coll2.add("AA1");
+		coll2.add("AA");
 		System.out.println(coll1.equals(coll2));
-		//12.
+		//12.hascode():
+		System.out.println(coll1.hashCode());
+		//13.toArray():将集合转换为数组
+		Object[]  obj  = coll.toArray();
+		for(int i = 0;i<obj.length;i++) {
+			System.out.println(obj[i]);
+		}
+		System.out.println();
+		//14.iterator():返回一个iterator接口类实现的对象,进而实现集合的遍历
+		Iterator intrator = coll.iterator();
+//		for (int i = 0 ;i< coll.size();i++) {
+//		System.out.println(intrator.next());}
+		
+		//
+		while(intrator.hasNext()) {
+			System.out.println(intrator.next());
+		}
 	}
 
 	@Test
