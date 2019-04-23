@@ -22,11 +22,11 @@ public class TestList {
 	 * List subList(int fromIndex,int toIndex) :返回从fromIndex到toIndex结束的左闭右开的一个子list
 	 * 
 	 * List常用的方法: 增(add(Object obj))  
-	 * 				删(remove)  
-	 * 				改(set(int index ,Object obj))  
-	 * 				查(get(int index)) 
-	 * 				插(add(int index,Object  ele))
-	 * 				长度(size())
+	 * 				    删(remove)  
+	 * 				    改(set(int index ,Object obj))  
+	 * 				    查(get(int index)) 
+	 * 				    插(add(int index,Object  ele))
+	 * 				    长度(size())
 	 * 
 	 */
 	@Test

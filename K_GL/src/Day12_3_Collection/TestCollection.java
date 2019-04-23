@@ -9,7 +9,7 @@ package Day12_3_Collection;
  * 		|--List接口:存储有序的,可以重复的元素
  * 			|--ArrayList(主要的实现类)(Day12_4_List --> TestList)
  * 			|--LinkedList(对于频繁的插入删除操作,建议使用这个)
- * 			|--Vector(古老的实现类.线程安全的)
+ * 			|--Vector(古老的实现类.线程安全的,不建议使用)
  * 		|--Set接口:存储无序的,不可以重复的元素
  * 			|--HashSet,LinkedHashSet,TreeSet
  * 	Map接口:存储  键-值对的数据
@@ -64,7 +64,7 @@ public class TestCollection {
 		
 		//
 		while(intrator.hasNext()) {
-			System.out.println(intrator.next());
+			System.out.println(intrator.next() );
 		}
 	}
 
@@ -118,7 +118,7 @@ public class TestCollection {
 		Collection coll1 = Arrays.asList(1, 2, 3, "SS");
 		coll.addAll(coll1);
 		System.out.println(coll.size());
-		// 5.查看集合元素
+		// 5.toString()查看集合元素
 		System.out.println(coll.toString());
 		// 4.isEmpty():判断集合是否为空
 		System.out.println(coll.isEmpty());

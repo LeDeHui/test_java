@@ -6,9 +6,7 @@ package Day12_2_Exception;
  * */
 public class MyException  extends RuntimeException {
 
-	/**
-	 * 
-	 */
+	 
 	  static final long serialVersionUID = 123456789L;
 	public   MyException() {
 		
