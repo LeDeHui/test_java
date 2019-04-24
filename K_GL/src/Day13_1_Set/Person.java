@@ -1,6 +1,7 @@
 package Day13_1_Set;
 
-public class Person {
+@SuppressWarnings("rawtypes")
+public class Person implements Comparable {
 	private String name;
 	private Integer age;
 	public String getName() {
@@ -56,6 +57,26 @@ public class Person {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+	
+	
+	//当向TreeSet中添加person类对象时，依据此方法确定按照哪个属性排列.
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		if(o instanceof Person) {
+			Person person = (Person)o;
+			//return this.name.compareTo(person.name);
+			//return this.age.compareTo(person.age) ;
+			int i = this.age.compareTo(person.age) ;
+			if (i==0) {
+				return this.name.compareTo(person.name);
+			}else {
+				return i;
+			}
+			
+		}
+		return 0;
 	} 
 	
 }
