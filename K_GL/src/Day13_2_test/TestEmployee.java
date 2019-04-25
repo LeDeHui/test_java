@@ -31,10 +31,14 @@ public class TestEmployee {
 					MyDate birth1 = e1.getBirthday();
 					MyDate birth2 = e2.getBirthday();
 					if (birth1.getYear() != birth2.getYear()) {
-						return birth1.getYear() -birth2.getYear() ;
-					}else {
-						if(birth1.getMonth()!=birth2.getMonth()) {
-							
+						return birth1.getYear() - birth2.getYear();
+					} else {
+						if (birth1.getMonth() != birth2.getMonth()) {
+							return birth1.getMonth() - birth2.getMonth();
+						} else {
+							if (birth1.getDay() != birth2.getDay()) {
+								return birth1.getDay() - birth2.getDay();
+							}
 						}
 					}
 				}
@@ -44,6 +48,21 @@ public class TestEmployee {
 			}
 
 		};
+		TreeSet set = new TreeSet(com);
+		Employee e1 = new Employee("刘德华", 55, new MyDate(1, 2, 1965));
+		Employee e2 = new Employee("郭富城", 43, new MyDate(3, 4, 1964));
+		Employee e3 = new Employee("张学友", 33, new MyDate(5, 6, 1961));
+		Employee e4 = new Employee("黎明", 54, new MyDate(7, 8, 1955));
+		Employee e5 = new Employee("陈奕迅", 65, new MyDate(9, 10, 1959));
+
+		set.add(e1);
+		set.add(e2);
+		set.add(e3);
+		set.add(e4);
+		set.add(e5);
+		for (Object strObject : set) {
+			System.out.println(strObject);
+		}
 	}
 
 	// 自然排序，使用Employee 实现Comparable接口，并 name排序
