@@ -4,27 +4,104 @@ package Day13_3_Map;
  * 
  * 	Map接口:存储  键-值对的数据
  * 		|--HashMap :Map的主要实现类
- * 		|--LinkedHashMap：
- * 		|--TreeMap
+ * 		|--LinkedHashMap：使用链表维护添加进map的顺序，故遍历map时，是按照添加顺序遍历
+ * 		|--TreeMap：按照添加进map的元素的key的指定属性进行排序。要求：key是同一个类的对象！
+ * 					自然排序  VS  定制排序
  * 		|--Hashtable
 			|--Properties 
  * 
  * 
  * */
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 import org.junit.Test;
 
 public class TestMap {
+	/*TreeMap
+	 * 自然排序  VS  定制排序
+	 * */
+	@Test
+	public void test4() {
+		Map map = new TreeMap();
+		map.put("AA", 123);
+		map.put("BB", 456); 
+		map.put(123,"CC");
+		map.put(null, null);
+		Set set1 = map.keySet();
+		for (Object obj:set1) {
+			System.out.println(obj +"---->" + map.get(obj));
+		}
+	}
+	
+	/*
+	 * 
+	 * LinkedHashMap
+	 * 
+	 * */
+	@Test
+	public void test3() {
+		Map map = new LinkedHashMap () ;
+		 
+		
+	}
+	/*
+	 * 如何遍历Map：
+	 * Set keySet()
+	 * collection values()
+	 * Set entrySet()
+	 * 
+	 * */
+	@Test
+	public void test2() {
+		Map map = new HashMap ();
+		map.put("AA", 123);
+		map.put("BB", 456); 
+		map.put(123,"CC");
+		map.put(null, null);
+		
+		//1.遍历key集
+		Set set = map.keySet();
+		for (Object obj:set) {
+			System.out.println(obj);
+		}
+		System.out.println();
+		//2.遍历values集
+		Collection  ValueSource  = map.values();
+		Iterator iterator = ValueSource.iterator();
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+		System.out.println();
+		//3.如何遍历entry（key-value对）
+//		方式1
+		Set set1 = map.keySet();
+		for (Object obj:set1) {
+			System.out.println(obj +"---->" + map.get(obj));
+		}
+//		方式2
+		 Set set2 = map.entrySet();
+		 for (Object obj:set2) {
+			 Map.Entry entry  = (Map.Entry)obj;
+			 System.out.println(entry);
+		 }
+		
+		
+	}
 	
 	/*
 	 * Object put(Object key,Object values):向map中添加一个元素 
 	 * Object remove(Object key)：按照指定的key删除此key-value
 	 * void putALL (Map t):添加新的Map数据进入
-	 * void clear()
+	 * void clear() :清空
 	 * Object get(Object key)
+	 *：获取指定key的value值.若无此key返回null
 	 * boolean containsKey(Object key)
 	 * boolean containsValues(Object values)
 	 * int size()  :返回长度
@@ -51,6 +128,8 @@ public class TestMap {
 		System.out.println(map.size());//4
 		map.remove("BB");
 		System.out.println(map);
+		
+		System.out.println(map.get(123));
 		
 		
 		
