@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * */
 public class TestAnnotation {
 	public static void main(String[] args) {
-		Person p = new Student();
+		Person p = new Student(); 
 		p.walk();
 		p.eat();
 
