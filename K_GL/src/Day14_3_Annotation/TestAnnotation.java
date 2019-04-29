@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /*
  * 
- * 注解：
+ * 注解：Annotstion
  * 1.JDK提供的常用的注解
 	 * 	@Override：限定重写父类方法，该注解只能用于方法
 	 * 	@Deprecated:用于表示某个程序元素（类，方法等）一过时
