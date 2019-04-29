@@ -31,6 +31,7 @@ import javax.sql.rowset.JdbcRowSet;
 import org.junit.Test;
 
 public class TestMap {
+
 	//使用Properties处理属性文件
 	@Test
 	public void test5() throws FileNotFoundException, IOException {
