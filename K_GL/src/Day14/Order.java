@@ -24,8 +24,19 @@ public class Order<T> {
 	public void setT(T t) {
 		this.t = t;
 	}
-
-	
+//不可以在static的方法中使用泛型的声明
+//	public static void show() {
+//		System.out.println(t);
+//	}
+//	
+	//不能再try  catch中使用泛型的声明
+//	public   void info() {
+//	try {
+//		
+//	} catch (t e) {
+//		// TODO: handle exception
+//	}
+//	}
 	//声明泛型方法
 	public <E> E getE(E e) {
 		return e;

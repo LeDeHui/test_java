@@ -12,6 +12,7 @@ package Day14;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -19,6 +20,90 @@ import java.util.Set;
 import org.junit.Test;
 
 public class TestGeneric {
+	/*
+	 * 通配符的使用
+	 * */
+	@Test
+	public void test7() {
+		List<String> list  = new ArrayList<String>();
+		list.add("AA");
+		list.add("BB");
+		List<?> list1 = list;
+		//可以读取声明为通配符的集合类的对象
+		Iterator<?> iterator =  list1.iterator();
+		while (iterator.hasNext() ) {
+			System.out.println(iterator.next());
+		}
+		// 不允许向声明为通配符的集合中写入对象  唯一例外：null
+//		list1.add("CC");
+//		list1.add(123);
+		list1.add(null);//
+	}
+	/*
+	 * 通配符 ? 
+	 * List<A>,List<B>......都是List<?>的子类
+	 * 
+	 * ? extends A :可以存放A及其子类
+	 * ? super A:可以存放A及其父类
+	 * */
+	@Test
+	public void test6() {
+		List<?> list = null;
+		List<Object> list1 = new   ArrayList<Object>();
+		List<String> list2 = new ArrayList<String>();
+		list = list1;
+		list = list2;
+//		show(list);
+		show(list1);
+//		show(list2);
+ 		show1(list);
+		show1(list1);
+		show1(list2);
+		
+		List<? extends Number> list3 = null;
+		List<Integer> list4 = null;
+		list3 = list4;
+		List<? super Number> list5 = null;
+		list5 = list1;
+		
+		
+		
+	}
+	public void   show(List<Object> list   ) {
+		// TODO Auto-generated method stub
+
+	}
+	public void   show1(List<?> list   ) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	
+	
+	
+	// 泛型与继承的关系
+	/*
+	 * 若类A是类B的子类，那么List<A>就不是List<B>的子接口
+	 * 
+	 */
+	@Test
+	public void test5() {
+		Object obj = null;
+		String str = "AA";
+		obj = str;
+
+		Object[] obj1 = null;
+		String[] str1 = new String[] { "AA", "BB", "CC" };
+		obj1 = str1;
+
+		List<Object> list = null;
+		List<String> list1 = new ArrayList<String>();
+//		list= list1;
+		// 假设list = list1满足
+		// list.add(123);
+		// String str = list1.get(0); // 出现问题，假设不满足
+
+	}
 
 	// 自定义泛型类的使用
 	@Test
@@ -36,24 +121,24 @@ public class TestGeneric {
 		System.out.println(list);
 //		当通过对象调泛型方法是，指明泛型方法的类型
 		Integer i = order.getE(34);
-		double d=order.getE(2.3);
-		
-		Integer[] in  = new Integer[]{1,2,3};
+		double d = order.getE(2.3);
+
+		Integer[] in = new Integer[] { 1, 2, 3 };
 		List<Integer> list2 = new ArrayList<>();
-		List<Integer> list3 = order.fromArrayToCollection(in,list2);
+		List<Integer> list3 = order.fromArrayToCollection(in, list2);
 		System.out.println(list3);
 		System.out.println("-----");
-		
+
 		SubOrder sub = new SubOrder();
-		sub.setT(23); 
+		sub.setT(23);
 		System.out.println(sub.getT());
 		sub.list.add(123);
 		sub.list.add(1231);
-		List<Integer> l1 =  sub.list;
+		List<Integer> l1 = sub.list;
 		System.out.println(l1);
 		l1.add(3);
 		System.out.println(l1);
- 
+
 	}
 
 	@Test
