@@ -1,0 +1,79 @@
+select dt dt,
+       sop_id,
+       sop_nm,
+       sum(ws_ml) ml,
+       sum(man_cost) man_cost,
+       sum(ope_prc) ope_prc,
+       sum(cove_prc) cove_prc,
+       sum(fd_fee + rs_fee + fdsend_fee) fd_fee
+  from (select a.etr_date dt,
+               a.sop_id,
+               a.sop_nm,
+               sum(a.examt - a.amt_by_cost) ws_ml,
+               sum(a.man_cost) man_cost,
+               sum(a.ope_prc) ope_prc,
+               sum(a.cove_prc) cove_prc,
+               0 as fd_fee,
+               0 as fdsend_fee,
+               0 as rs_fee
+          from tb_ap099 a
+         where a.etr_date between
+               to_char(to_date('2019-01', 'yyyy-mm'), 'yyyy-mm') and
+               to_char(to_date('2019-01', 'yyyy-mm'), 'yyyy-mm')
+        
+         group by a.etr_date, a.sop_id, a.sop_nm
+        union all
+        select t.ap_date dt,
+               t2.sop_id sop_id,
+               t3.sop_nm sop_nm,
+               0 as ws_ml,
+               0 as man_cost,
+               0 as ope_prc,
+               0 as cove_prc,
+               nvl(sum(t.deliveryfee), 0) fd_fee,
+               0 as fdsend_fee,
+               0 as rs_fee
+          from tb_az054_ap t, tb_az012 t2, tb_ap101 t3
+         where t.ap_date between
+               to_char(to_date('2018-01', 'yyyy-mm'), 'yyyy-mm') and
+               to_char(to_date('2018-12', 'yyyy-mm'), 'yyyy-mm')
+           and t.addr_1 = t2.addr
+           and t2.sop_id = t3.sop_id
+         group by t.ap_date, t2.sop_id, t3.sop_nm
+        union all
+        select t4.ap_date dt,
+               t2.sop_id sop_id,
+               t3.sop_nm sop_nm,
+               0 as ws_ml,
+               0 as man_cost,
+               0 as ope_prc,
+               0 as cove_prc,
+               0 as fd_fee,
+               nvl(sum(t4.avg_fre), 0) fdsend_fee,
+               0 as rs_fee
+          from tb_az054_ap_sending t4, tb_az012 t2, tb_ap101 t3
+         where t4.ap_date between
+               to_char(to_date('2018-01', 'yyyy-mm'), 'yyyy-mm') and
+               to_char(to_date('2018-12', 'yyyy-mm'), 'yyyy-mm')
+           and t4.addr_1 = t2.addr
+           and t2.sop_id = t3.sop_id
+         group by t4.ap_date, t2.sop_id, t3.sop_nm
+        union all
+        select t1.ap_date dt,
+               t2.sop_id sop_id,
+               t3.sop_nm sop_nm,
+               0 as ws_ml,
+               0 as man_cost,
+               0 as ope_prc,
+               0 as cove_prc,
+               0 as fd_fee,
+               0 as fdsend_fee,
+               nvl(sum(t1.deliveryfee), 0) rs_fee
+          from tb_az055_ap t1, tb_az012 t2, tb_ap101 t3
+         where t1.ap_date between
+               to_char(to_date('2018-01', 'yyyy-mm'), 'yyyy-mm') and
+               to_char(to_date('2018-12', 'yyyy-mm'), 'yyyy-mm')
+           and t1.addr_1 = t2.addr
+           and t2.sop_id = t3.sop_id
+         group by t1.ap_date, t2.sop_id, t3.sop_nm)
+ group by dt, sop_id, sop_nm

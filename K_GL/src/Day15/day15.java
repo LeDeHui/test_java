@@ -21,11 +21,11 @@ package Day15;
  * 	按照角色的不同：节点流（直接作用于文件）	处理了
  *
  * 2.IO 的体系
- * 	抽象基类			节点流（文件流）		缓冲流
- * 	InputStream		FileInputStream		BufferedInputStream
- * 	OutputStream	FileOutputStream	BufferedOutputStream
- * 	Reader			FileReader			BufferedReader
- * 	Writer			FileWriter			BufferedWriter
+ * 			抽象基类			节点流（文件流）		缓冲流
+ *	非文本 	InputStream		FileInputStream		BufferedInputStream
+ *	非文本	OutputStream	FileOutputStream	BufferedOutputStream
+ * 	文本 	Reader			FileReader			BufferedReader
+ *	文本		Writer			FileWriter			BufferedWriter
  * */
 public class day15 {
 
