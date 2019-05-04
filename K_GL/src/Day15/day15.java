@@ -18,7 +18,7 @@ package Day15;
  * 1.流的分类
  *	按照数据流向的不同：输入流，输出流
  *	按照处理数据的单位不同：字节流	字符流（处理的文本文件）
- * 	按照角色的不同：节点流（直接作用于文件）	处理了
+ * 	按照角色的不同：节点流（直接作用于文件）	处理流
  *
  * 2.IO 的体系
  * 			抽象基类			节点流（文件流）			缓冲流
@@ -26,6 +26,7 @@ package Day15;
  *	非文本	OutputStream	FileOutputStream	BufferedOutputStream
  * 	文本 		Reader			FileReader			BufferedReader
  *	文本		Writer			FileWriter			BufferedWriter
+ *
  * */
 public class day15 {
 

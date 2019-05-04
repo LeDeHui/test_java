@@ -67,6 +67,7 @@ public class TestBufferedInputOutputStream {
 	public void testBufferedInputStream() {
 		BufferedOutputStream bos = null;
 		BufferedInputStream bis = null;
+		BufferedInputStream bis1 = null;
 		try {
 			// 1. 提供读入，写出的文件
 			File file1 = new File("hj.jpg");
@@ -77,6 +78,7 @@ public class TestBufferedInputOutputStream {
 			// 3.将创建的节点流的对象作为形参传递给缓冲流的构造器中
 			bis = new BufferedInputStream(fis);
 			bos = new BufferedOutputStream(fos);
+			bis1= new BufferedInputStream(new FileInputStream(new File("hj.jpg")));
 			// 4.具体的实现文件复制的操作
 			byte[] b = new byte[1024];
 			int len;
@@ -103,6 +105,7 @@ public class TestBufferedInputOutputStream {
 			if (bis != null) {
 				try {
 					bis.close();
+					bis1.close();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
