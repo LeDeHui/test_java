@@ -66,7 +66,7 @@ public class TestObjectInputOutputStream {
  * 1.要求此类是可序列化的:实现Serializable接口
  * 2.要求类的属性同样实现Serializable接口
  * 3.提供一个版本号private static final long serialVersionUid 
- * 4.使用static或transient修饰的属性,不可实例化
+ * 4.使用static或transient修饰的属性,不可序列化
  */
 class Person implements Serializable {
 	private static final long serialVersionUid = 123L;
