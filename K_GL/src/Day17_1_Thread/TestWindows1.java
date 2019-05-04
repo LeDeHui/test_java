@@ -24,7 +24,7 @@ class Windows1 implements Runnable{
 				System.out.println(Thread.currentThread().getName() + "ÊÛÆ±,Æ±ºÅÎª" + ticket--);
 
 			} else {
-				break;
+				break; 
 			}
 		}
 	} 
