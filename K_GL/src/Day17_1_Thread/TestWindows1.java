@@ -1,6 +1,5 @@
 package Day17_1_Thread;
-
-import java.awt.Window;
+ 
 //  适用Runnable接口方式:售票
 //模拟火车站售票窗口,开启三个窗口,总票数为100张
 public class TestWindows1 {
