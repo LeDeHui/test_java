@@ -24,8 +24,8 @@ import java.io.IOException;
 import org.junit.Test;
 
 /*
-  *  使用FileReader FileWriter 可以实现文本文件的复制
-  *  对应非文本文件（视频文件，音频文件，图片），只能用字节流！
+  *  	使用FileReader FileWriter 可以实现文本文件的复制
+  *  	对应非文本文件（视频文件，音频文件，图片），只能用字节流！
  * 
  * */
 public class TestFileReaderWriter {

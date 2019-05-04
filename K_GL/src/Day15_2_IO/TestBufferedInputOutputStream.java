@@ -16,10 +16,10 @@ import org.junit.Test;
 
 /*
  * 2.IO 的体系
- * 			抽象基类			节点流（文件流）		缓冲流(可以提升文件的处理效率)
+ * 			抽象基类			节点流（文件流）			缓冲流(可以提升文件的处理效率)
  *	非文本 	InputStream		FileInputStream		BufferedInputStream
  *	非文本	OutputStream	FileOutputStream	BufferedOutputStream  (flush())
- * 	文本 	Reader			FileReader			BufferedReader(readLine())
+ * 	文本 		Reader			FileReader			BufferedReader(readLine())
  *	文本		Writer			FileWriter			BufferedWriter (flush())
  * */
 

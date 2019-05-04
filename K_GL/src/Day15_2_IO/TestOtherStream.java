@@ -17,12 +17,12 @@ import org.junit.Test;
 
 public class TestOtherStream {
 	/*
-	 * 标准的输入输出流 标准的输出流： System.out 标准的输入流： System.in
+	 *	 标准的输入输出流 标准的输出流： System.out 标准的输入流： System.in
 	 */
 	@Test
 	public void test2() {
 		/*
-		 * 题目： 从键盘输入字符串，要求将读取到的整行字符串转换成大写输出 然后继续进行输入操作。 直至当输入 e 或者 exit 是，程序退出
+		 * 	题目： 从键盘输入字符串，要求将读取到的整行字符串转换成大写输出 然后继续进行输入操作。 直至当输入 e 或者 exit 是，程序退出
 		 */
 		BufferedReader br = null;
 		try {
@@ -55,8 +55,8 @@ public class TestOtherStream {
 	}
 
 	/*
-	 * 如何实现字节流与字符流之间的转换 转换流 InputStreamReader OutputStreamWriter 解码：字节数组-->字符串
-	 * 编码：字符串-->字节数组
+	 * 	如何实现字节流与字符流之间的转换 转换流 InputStreamReader OutputStreamWriter 解码：字节数组-->字符串
+	 * 	编码：字符串-->字节数组
 	 */
 	@Test
 	public void test1() {
