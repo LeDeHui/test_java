@@ -13,7 +13,7 @@ package Day16_5_Thread;
  * 9.sleep(long l):显式的让当前线程睡眠l毫秒
  * 10.线程通信:wait()  notify()  notifAll()
  * 
- * 设置线程的优先级
+ * 	设置线程的优先级
  * getPriority():返回线程优先值
  * setPriority(int newPriority):改变线程的优先级
  * 
