@@ -27,6 +27,6 @@ class Windows1 implements Runnable{
 				break;
 			}
 		}
-	}
+	} 
 }
 
