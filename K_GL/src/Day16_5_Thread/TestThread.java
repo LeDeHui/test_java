@@ -5,6 +5,7 @@ package Day16_5_Thread;
  * 	创建多线程的第一种方式:继承java.lang.Thread类
  * 
  * */
+//存在线程安全问题
 //1.创建一个继承Thread的子类
 class SubThread extends Thread {
 	//2. 重写Thread类的run方法, 方法内实现子线程要完成的功能

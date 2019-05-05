@@ -19,9 +19,16 @@ package Day16_5_Thread;
  * 
  * 
  * */
+//存在线程安全问题
 class SubThread1 extends Thread {
 	public void run() {
 		for (int i = 0; i < 50; i++) {
+//			try {
+//				sleep(1000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			System.out.println(Thread.currentThread().getName() + ":" + i);
 		}
 	}
@@ -40,14 +47,14 @@ public class TestThread1 {
 //			if (i % 5 == 0) {
 //				Thread.currentThread().yield();
 //			}
-//			if (i == 20) {
-//				try {
-//					s.join();
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			}
+			if (i == 20) {
+				try {
+					s.join();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 
 	}
