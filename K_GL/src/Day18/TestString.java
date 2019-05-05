@@ -3,6 +3,11 @@ package Day18;
 import org.junit.Test; 
 
 public class TestString {
+	/**/
+	@Test
+	public void test4() {
+			
+	}
 	/*
 	 *  public int length()
 	 *  public char charAt(int index):返回在指定index位置的字符。index从0开始
