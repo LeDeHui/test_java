@@ -9,9 +9,9 @@ public class TestString {
 	 * public  String substring(int start , int end)截取start开始位置到end结束的字符串,左闭右开,start可以从0开始
 	 * public  String replace(char oldChar ,char newchar)
 	 * public  String replaceAll(String old,String new)
-	 * public  String trim()
-	 * public  String comcat(String str)
-	 * public  String[] splot(String regex) 
+	 * public  String trim():去除当前字符串首尾出现的空格,若有多个,去除多个
+	 * public  String concat(String str):连接当前字符串与str
+	 * public  String[] split(String regex) : 按照regex将当前字符串拆分,拆分为多个字符串, 返回字符数组
 	 * */
 	@Test
 	public void test4() {
@@ -23,6 +23,17 @@ public class TestString {
 		String str4 = str1.replace("北京", "南京");
 		System.out.println(str1);
 		System.out.println(str4);
+		String str5 = "  abc    d     ";
+		String str6 = str5.trim();
+		System.out.println(":"+str6+":");
+		System.out.println(":"+str5+":");
+		String str7 = str1.concat(str2);
+		System.out.println(str7);
+		String str8 = "abc*d-e7-ke";
+		String [] strs  = str8.split("-");
+		for (int i = 0; i < strs.length; i++) {
+			System.out.print(strs[i]);
+		}
 		
 	}
 	/*
