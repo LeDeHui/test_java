@@ -5,7 +5,7 @@ package Day18_StringDemo;
  * 3.获取一个字符串在另一个字符串中出现的次数.比如 获取 "ab"在  "absdaabdssabkavkkab"中出现的次数
  * 
  * 
- * 
+ *  
  * */
 public class StringDemo {
 	public static void main(String[] args) {
