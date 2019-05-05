@@ -3,10 +3,27 @@ package Day18;
 import org.junit.Test; 
 
 public class TestString {
-	/**/
+	/*
+	 * 
+	 * public  String substring(int startpoing):截取startpoing开始位置后面的全部字符串
+	 * public  String substring(int start , int end)截取start开始位置到end结束的字符串,左闭右开,start可以从0开始
+	 * public  String replace(char oldChar ,char newchar)
+	 * public  String replaceAll(String old,String new)
+	 * public  String trim()
+	 * public  String comcat(String str)
+	 * public  String[] splot(String regex) 
+	 * */
 	@Test
 	public void test4() {
-			
+		String str1 = "北京尚硅谷教育北京";
+		String str2 = "上海尚硅谷教育";
+		String str3 = str1.substring(2);
+		System.out.println(str3);
+		System.out.println();
+		String str4 = str1.replace("北京", "南京");
+		System.out.println(str1);
+		System.out.println(str4);
+		
 	}
 	/*
 	 *  public int length()
