@@ -3,6 +3,46 @@ package Day18;
 import org.junit.Test; 
 
 public class TestString {
+	/* 1.字符串与基本数据类型，包装类之间的转换
+	 * 		①  字符串-->基本数据类型，包装类：调用相应的包装类的ParseXXX方法
+	 *  	②  基本数据类型，包装类-->字符串：调用字符串的重载的valueOf()
+	 * 2.字符串与字节数组之间的转换
+	 * 		① 字符串-->字节数组：调用字符串的getBates()
+	 * 		② 字节数组-->字符串:调用字符串的构造器
+	 * 
+	 * 3.字符串与字符数组之间的转换
+	 * 		①字符串-->字符数组：调用字符串的toCharArray()
+	 * 		②字符数组-->字符串：调用字符串的构造器
+	 * 
+	 * 
+	 * */
+	@Test
+	public void test5() {
+		//1.字符串与基本数据类型，包装类之间的转换
+		String str1 = "123";
+		int i = Integer.parseInt(str1);
+		System.out.println(i);
+		String  str2 = String.valueOf(i);
+		System.out.println(str2);
+		//2.字符串与字节数组之间的转换
+		String str3 = "abc123";
+		byte[] b  = str3.getBytes() ; 
+		for (int j = 0; j < b.length; j++) {
+			System.out.print ( (char) b[j] );
+		}
+		System.out.println();
+		String str4 = new String(b);
+		System.out.println(str4);
+		//3.字符串与字符数组之间的转换
+		String  str5 = "abc123中国人";
+		char[] c = str5.toCharArray();
+		for (int j = 0; j < c.length; j++) {
+			System.out.print (   c[j] );
+		}
+		System.out.println();
+		String str6 = new String(c);
+		System.out.println(str6);
+	}
 	/*
 	 * 
 	 * public  String substring(int startpoing):截取startpoing开始位置后面的全部字符串
