@@ -18,6 +18,7 @@ public class StringDemo {
 		System.out.println(reverseString1(str1, 2, 6));
 		System.out.println(getCount("absdaabdssabkavkkab", "ab"));
 	}
+	//3.
 	public static int getCount(String str1, String str2) {
 		int count = 0;
 		int len;
@@ -29,6 +30,7 @@ public class StringDemo {
 
 		return count;
 	}
+	//3.
 
 	// 2.
 	public static String reverseString1(String str, int start, int end) {
