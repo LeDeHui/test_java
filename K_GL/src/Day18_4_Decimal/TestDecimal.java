@@ -10,7 +10,7 @@ public class TestDecimal {
 	public void testBigInteger(){
 		BigInteger bi = new BigInteger("12433241123");
 		BigDecimal bd = new BigDecimal("12435.351");
-		BigDecimal bd2 = new BigDecimal("11");
+		BigDecimal bd2 = new BigDecimal("11"); 
 		System.out.println(bi);
 		//System.out.println(bd.divide(bd2));
 		System.out.println(bd.divide(bd2,BigDecimal.ROUND_HALF_UP));
