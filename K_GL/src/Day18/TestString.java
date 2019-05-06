@@ -13,7 +13,7 @@ public class TestString {
 	 * public  String concat(String str):连接当前字符串与str
 	 * public  String[] split(String regex) : 按照regex将当前字符串拆分,拆分为多个字符串, 返回字符数组
 	 * */
-	@Test
+	@Test 
 	public void test4() {
 		String str1 = "北京尚硅谷教育北京";
 		String str2 = "上海尚硅谷教育";
