@@ -1,4 +1,4 @@
-package Day18_1_tringDemo;
+package Day18_1_StringDemo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
