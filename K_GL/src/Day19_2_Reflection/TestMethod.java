@@ -64,4 +64,36 @@ public class TestMethod {
 			System.out.println(m);
 		}
 	}
+	
+	//调用运行时类中指定的方法
+	@Test
+	public void test3() throws Exception {
+		Class<Person> class1 = Person.class;
+		Person person =  (Person)class1.newInstance();
+		//getMethod(String methodName,class...params):获取运行时类中声明为public的方法
+		Method m1 = class1.getMethod("show");
+		Object returnVal= m1.invoke(person);
+		//调用指定的方法;invoke(Object odj,Object...obj)
+		System.out.println(returnVal);
+		
+		Method m2 = class1.getMethod("toString");
+		Object returnVal1 = m2.invoke(person);
+		System.out.println(returnVal1);
+		
+		Method m3 = class1.getDeclaredMethod("show1");
+		Object returnVal2 = m3.invoke(person);
+		System.out.println(returnVal2);
+		
+		Method m4 = class1.getDeclaredMethod("info");
+		Object returnVal4 = m4.invoke(person);
+		System.out.println(returnVal4);
+		
+		Method m5 = class1.getDeclaredMethod("infone" );//(name, parameterTypes) 
+ 		Object returnVal5 =m5.invoke(person );
+  		System.out.println(returnVal5);
+		
+	}
+	
+	
+	
 }

@@ -44,4 +44,31 @@ public class TestField {
 			System.out.println();
 		}
 	}
+	//调用运行时类中指定的属性
+	@Test
+	public void test3() throws Exception {
+		Class class1 = Person.class;
+		//1.获取指定的属性
+		//getField (String fieldName):获取运行时类声明为public的指定属性名为fisldName 的属性 
+		//getDeclaredField(String fieldName):获取运行时类声明为指定属性名为fisldName 的属性 
+		Field  nameField= class1.getField("name");
+		//2.创建运行时类的对象
+		Person person = (Person)class1.newInstance();
+		System.out.println(person);
+		
+		//3.将运行时类的指定的属性赋值
+		nameField.set(person, "Jerry");
+		System.out.println( person );
+		
+		Field  ageField= class1.getDeclaredField("age");
+		ageField.setAccessible(true);
+		ageField.set(person, 23);
+		System.out.println( person );
+		//由于属性权限修饰符的限制,为了保证可以给属性赋值,需要在操作前使的此属性可被操作
+		Field  idField= class1.getDeclaredField("id");
+		idField.setAccessible(true);
+		idField.set(person, 23);
+		System.out.println( person );
+		
+	}
 }
