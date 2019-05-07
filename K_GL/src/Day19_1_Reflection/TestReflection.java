@@ -31,10 +31,11 @@ public class TestReflection {
 		System.out.println(classLoader5);
 
 		// 掌握如下
-//		ClassLoader classLoader = this.getClass().getClassLoader();
-//		InputStream is = classLoader.getResourceAsStream("Day19_1_Reflection\\jdbc.properties");
-		
-		FileInputStream is = new FileInputStream("jdbc.properties");
+		//法一
+		ClassLoader classLoader = this.getClass().getClassLoader();
+		InputStream is = classLoader.getResourceAsStream("Day19_1_Reflection\\jdbc.properties");
+		//法二
+//		FileInputStream is = new FileInputStream("jdbc.properties");
 		
 		
 		
@@ -70,14 +71,21 @@ public class TestReflection {
 		ClassLoader classLoader = this.getClass().getClassLoader();
 		Class class5 = classLoader.loadClass(className);
 		System.out.println(class5.getName());
+		
+		System.out.println(class1 == class3);//T
+		System.out.println(class1 == class4);//T
+		System.out.println(class1 == class4);//T
 	}
 
 	// java.lang.Class:是反射的源头
 	/*
 	 * 我们创建了同一个类,通过编译(javac.exe)生成对应的.class文件 之后我们使用java.exe加载 (JVM的类加载器完)此.class文件
 	 * 此.class文件加载到内存以后,就说一个运行是类. 存放的缓存区,那么这个运行时类本身就是一个Class的实例 1.每一个运行时类只被加载一次
-	 * 2.有了Class的实例以后,我们还可以进行如下的操作 1)创建对应的运行时类的对象 2)可以获取运行时类的完整结构(属性 方法 构造器 内部类 父类
-	 * 所在的包 异常 注解.....) 3)调用对应的运行时类指定的结构(属性 方法 构造器...) 4)反射的应用:动态代理
+	 * 2.有了Class的实例以后,我们还可以进行如下的操作 
+	 * 1)创建对应的运行时类的对象 
+	 * 2)可以获取运行时类的完整结构(属性 方法 构造器 内部类 父类 所在的包 异常 注解.....) 
+	 * 3)调用对应的运行时类指定的结构(属性 方法 构造器...) 
+	 * 4)反射的应用:动态代理
 	 * 
 	 * 
 	 */
@@ -116,7 +124,7 @@ public class TestReflection {
 
 	// 在有反射以前。如何创建一个类的对象，并调用其属性方法
 	@Test
-	public void test1() {
+	public void test1() throws Exception {
 		Person p = new Person();
 		p.setAge(20);
 		p.setName("Le");
