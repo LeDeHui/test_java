@@ -1,16 +1,50 @@
 package Day19_1_Reflection;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.Properties;
 
 import org.junit.Test;
 
 public class TestReflection {
 	// 关于类的加载器 ClassLoader
 	@Test
-	public void test5() {
+	public void test5() throws Exception {
+		ClassLoader classLoader1 = ClassLoader.getSystemClassLoader();
+		System.out.println(classLoader1);
+
+		ClassLoader classLoader2 = classLoader1.getParent();
+		System.out.println(classLoader2);
+
+		ClassLoader classLoader3 = classLoader2.getParent();
+		System.out.println(classLoader3);// null
+
+		Class class1 = Person.class;
+		ClassLoader classLoader4 = class1.getClassLoader();
+		System.out.println(classLoader4);
+
+		String className = "java.lang.Object";
+		Class class2 = class1.forName(className);
+		ClassLoader classLoader5 = class2.getClassLoader();
+		System.out.println(classLoader5);
+
+		// 掌握如下
+//		ClassLoader classLoader = this.getClass().getClassLoader();
+//		InputStream is = classLoader.getResourceAsStream("Day19_1_Reflection\\jdbc.properties");
+		
+		FileInputStream is = new FileInputStream("jdbc.properties");
 		
 		
+		
+		Properties pros = new Properties();
+		pros.load(is);
+		String name = pros.getProperty("user");
+		System.out.println(name);
+		
+		String password = pros.getProperty("password");
+		System.out.println(password);
 	}
 
 	// 如何获取Class的实例
