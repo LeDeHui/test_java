@@ -1,6 +1,8 @@
 package Day18_3_Date;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 /*
  * 与时间相关的类
  * 1.System 类下的currentTimeMillis() ：一般用于计算时间差
@@ -15,9 +17,16 @@ import java.util.Date;
 import org.junit.Test;
 
 public class TestDate {
+	//4.Calendar类
+	public void test3()  {
+		Calendar c = Calendar.getInstance();
+		 
+		
+	}
+	
 	//3.java.text.SimpleDateFormat类  :易于国际化
 	/*	格式化：日期--->文本  使用SimpleDateFormat类里的format()方法
-	 * 	解析：文本-->日期   使用parse()
+	 * 	解析：    文本-->日期   使用SimpleDateFormat类里的parse()方法
 	 * */
 	@Test
 	public void test2() throws ParseException {
@@ -27,12 +36,13 @@ public class TestDate {
 		System.out.println(date);
 		//2.格式化2
 		SimpleDateFormat sdf1 = new SimpleDateFormat("EEE,yyyy-MM-dd hh:mm:ss");//2019-05-06 11:59:14
-		String date1  = sdf1.format(new Date());//
+		String date1  = sdf1.format(new Date());//星期二,2019-05-07 01:15:18
 		System.out.println(date1);
 		//3.解析
 		Date date2 = sdf.parse("19-5-6 上午11:42");
+		Date date3 = sdf1.parse("星期二,2019-05-07 01:15:18");
 		System.out.println(date2);
-		
+		System.out.println(date3);
 	}
 	@Test
 	//2.Date类
