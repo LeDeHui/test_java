@@ -65,8 +65,13 @@ class MyProxy {
 
 public class TestAOP {
 	public static void main(String[] args) {
-		SuperMan man = new SuperMan();//
-		
+		SuperMan man = new SuperMan();// 创建一个被代理类的对象
+		Object obj = MyProxy.getProxyInstance(man);// 返回一个代理类对象
+		Human human = (Human) obj;
+		human.info();// 通过代理类的对象调用重写的抽象方法
+		System.out.println();
+		human.fly();
+
 	}
 
 }
