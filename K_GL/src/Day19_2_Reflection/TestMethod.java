@@ -71,6 +71,7 @@ public class TestMethod {
 		Class<Person> class1 = Person.class;
 		Person person =  (Person)class1.newInstance();
 		//getMethod(String methodName,class...params):获取运行时类中声明为public的方法
+		
 		Method m1 = class1.getMethod("show");
 		Object returnVal= m1.invoke(person);
 		//调用指定的方法;invoke(Object odj,Object...obj)
@@ -88,10 +89,16 @@ public class TestMethod {
 		Object returnVal4 = m4.invoke(person);
 		System.out.println(returnVal4);
 		
-		Method m5 = class1.getDeclaredMethod("infone" );//(name, parameterTypes) 
- 		Object returnVal5 =m5.invoke(person );
+		/*有返回值  带参数的*/
+		Method m5 = class1.getDeclaredMethod("infone" ,String.class); 
+		m5.setAccessible(true);
+		Object returnVal5 =m5.invoke(person,"ww" );
   		System.out.println(returnVal5);
-		
+  		
+  		Method m6 = class1.getDeclaredMethod("display", String.class);
+  		m6.setAccessible(true);
+  		Object returnVal6 =m6.invoke(person,"ww" );
+  		System.out.println(returnVal6);
 	}
 	
 	

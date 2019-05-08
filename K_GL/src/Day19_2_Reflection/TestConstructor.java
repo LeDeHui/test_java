@@ -26,4 +26,14 @@ public class TestConstructor {
 			System.out.println(c);
 		}
 	}
+	@Test
+	public void test3() throws Exception {
+		String className = "Day19_1_Reflection.Person";
+		Class<?> class1 = Class.forName(className);
+		Constructor<?>  cons = class1.getDeclaredConstructor(String.class,int.class);
+		cons.setAccessible(true);
+		Object object =  cons.newInstance("le",10);
+		//Person person =(Person)object;
+		System.out.println(object);
+	}
 }

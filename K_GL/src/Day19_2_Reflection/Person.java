@@ -51,7 +51,7 @@ public class Person extends Creature<String> implements Comparable, MyInterface 
 		return "AA";
 	}
 
-	private void display(String nation) throws Exception {
+	private void display(String nation)   {
 		System.out.println("我的国籍是：" + nation);
 	}
 
@@ -70,8 +70,8 @@ public class Person extends Creature<String> implements Comparable, MyInterface 
 		System.out.println("Static_method");
 
 	}
-	public  int  infone(  ) {
-		System.out.println("Static_method" + "str1");
+	public  int  infone(String str1  ) {
+		System.out.println("Static_method" + str1);
 		return 123;
 
 	}
