@@ -12,7 +12,7 @@ public class DateFormatThreadLocal {
 		protected DateFormat initialValue(){
 			return new SimpleDateFormat("yyyyMMdd");
 		}
-		
+		 
 	};
 	
 	public static final Date convert(String source) throws ParseException{
