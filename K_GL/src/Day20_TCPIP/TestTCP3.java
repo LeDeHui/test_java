@@ -94,6 +94,7 @@ public class TestTCP3 {
 			while ((len = is.read(b)) != -1) {
 				fos.write(b, 0, len);
 			}
+			System.out.println(s.getInetAddress().getHostName());
 			os = s.getOutputStream();
 			os.write("Over".getBytes());
 			s.shutdownOutput();
