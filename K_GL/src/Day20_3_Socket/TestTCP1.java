@@ -50,7 +50,7 @@ public class TestTCP1 {
 
 	}
 
-	// 服务端
+	// 服务端 
 	@Test
 	public void server() {
 		ServerSocket ss = null;
