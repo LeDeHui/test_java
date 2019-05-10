@@ -9,32 +9,30 @@ import java.util.function.Consumer;
 
 import org.junit.Test;
 
-/*
- * 涓�銆丩ambda 琛ㄨ揪寮忕殑鍩虹璇硶锛欽ava8涓紩鍏ヤ簡涓�涓柊鐨勬搷浣滅 "->" 璇ユ搷浣滅绉颁负绠ご鎿嶄綔绗︽垨 Lambda 鎿嶄綔绗�
- * 						    绠ご鎿嶄綔绗﹀皢 Lambda 琛ㄨ揪寮忔媶鍒嗘垚涓ら儴鍒嗭細
+/* 一.Lambda 表达式的基础语法,Java8中引入了一个新的操作符,该操作符简称为箭头操作符或Lambda操作符
+ * 			箭头操作符将Lambda表达式拆分为两部分
+ * 左侧:Lambda表达式的参数列表
+ * 右侧:Lambda表达式中所需要执行的功能,即Lambda体
  * 
- * 宸︿晶锛歀ambda 琛ㄨ揪寮忕殑鍙傛暟鍒楄〃
- * 鍙充晶锛歀ambda 琛ㄨ揪寮忎腑鎵�闇�鎵ц鐨勫姛鑳斤紝 鍗� Lambda 浣�
- * 
- * 璇硶鏍煎紡涓�锛氭棤鍙傛暟锛屾棤杩斿洖鍊�
+ * 语法格式一:无参数无返回值
  * 		() -> System.out.println("Hello Lambda!");
  * 
- * 璇硶鏍煎紡浜岋細鏈変竴涓弬鏁帮紝骞朵笖鏃犺繑鍥炲��
+ * 语法格式二:有一个参数,并且有返回值
  * 		(x) -> System.out.println(x)
  * 
- * 璇硶鏍煎紡涓夛細鑻ュ彧鏈変竴涓弬鏁帮紝灏忔嫭鍙峰彲浠ョ渷鐣ヤ笉鍐�
+ * 语法格式三:若只有一个参数,小括号可以省略
  * 		x -> System.out.println(x)
  * 
- * 璇硶鏍煎紡鍥涳細鏈変袱涓互涓婄殑鍙傛暟锛屾湁杩斿洖鍊硷紝骞朵笖 Lambda 浣撲腑鏈夊鏉¤鍙�
+ * 语法格式四:有两个以上的参数,有返回值,并且 Lambda 体中有多条语句 
  *		Comparator<Integer> com = (x, y) -> {
  *			System.out.println("鍑芥暟寮忔帴鍙�");
  *			return Integer.compare(x, y);
  *		};
  *
- * 璇硶鏍煎紡浜旓細鑻� Lambda 浣撲腑鍙湁涓�鏉¤鍙ワ紝 return 鍜� 澶ф嫭鍙烽兘鍙互鐪佺暐涓嶅啓
+ * 语法格式五::有两个以上的参数,有返回值,并且 Lambda 体中有一条语句
  * 		Comparator<Integer> com = (x, y) -> Integer.compare(x, y);
  * 
- * 璇硶鏍煎紡鍏細Lambda 琛ㄨ揪寮忕殑鍙傛暟鍒楄〃鐨勬暟鎹被鍨嬪彲浠ョ渷鐣ヤ笉鍐欙紝鍥犱负JVM缂栬瘧鍣ㄩ�氳繃涓婁笅鏂囨帹鏂嚭锛屾暟鎹被鍨嬶紝鍗斥�滅被鍨嬫帹鏂��
+ * 语法格式六:Lambda的表达式的参数列表可以省略不写,因为JVM编译器通过上下文推断出数据类型,即"类型推断"
  * 		(Integer x, Integer y) -> Integer.compare(x, y);
  * 
  * 涓婅仈锛氬乏鍙抽亣涓�鎷彿鐪�
@@ -49,7 +47,7 @@ public class TestLambda2 {
 	
 	@Test
 	public void test1(){
-		int num = 0;//jdk 1.7 鍓嶏紝蹇呴』鏄� final
+		int num = 0;//jdk 1.7 以前必须是 final  1.8默认final
 		
 		Runnable r = new Runnable() {
 			@Override
@@ -69,15 +67,15 @@ public class TestLambda2 {
 	@Test
 	public void test2(){
 		Consumer<String> con = x -> System.out.println(x);
-		con.accept("鎴戝ぇ灏氱璋峰▉姝︼紒");
+		con.accept("Lambda");
 	}
 	
 	@Test
 	public void test3(){
 		Comparator<Integer> com = (x, y) -> {
-			System.out.println("鍑芥暟寮忔帴鍙�");
+			System.out.println("函数式接口");
 			return Integer.compare(x, y);
-		};
+		}; 
 	}
 	
 	@Test
