@@ -11,9 +11,14 @@ import java.util.function.Supplier;
 import org.junit.Test;
 
 /*
- * 涓�銆佹柟娉曞紩鐢細鑻� Lambda 浣撲腑鐨勫姛鑳斤紝宸茬粡鏈夋柟娉曟彁渚涗簡瀹炵幇锛屽彲浠ヤ娇鐢ㄦ柟娉曞紩鐢�
- * 			  锛堝彲浠ュ皢鏂规硶寮曠敤鐞嗚В涓� Lambda 琛ㄨ揪寮忕殑鍙﹀涓�绉嶈〃鐜板舰寮忥級
+ * 方法引用:若Lambda 体中的内容有方法已经实现了,我们可以使用"方法引用"
+ * 		(可以理解为方法引用是Lambda 表达式的另一种表形式)
+ * 	只要有三种语法格式:
+ * 	对象 :: 实例名
  * 
+ * 	类 :: 静态方法名
+ * 
+ * 	类 :: 实例方法名
  * 1. 瀵硅薄鐨勫紩鐢� :: 瀹炰緥鏂规硶鍚�
  * 
  * 2. 绫诲悕 :: 闈欐�佹柟娉曞悕
@@ -131,12 +136,12 @@ public class TestMethodRef {
 	public void test1(){
 		PrintStream ps = System.out;
 		Consumer<String> con = (str) -> ps.println(str);
-		con.accept("Hello World锛�");
+		con.accept("Hello World!!");
 		
 		System.out.println("--------------------------------");
 		
 		Consumer<String> con2 = ps::println;
-		con2.accept("Hello Java8锛�");
+		con2.accept("Hello Java8!!");
 		
 		Consumer<String> con3 = System.out::println;
 	}
