@@ -27,10 +27,12 @@ import org.junit.Test;
  * 	二.构造器引用	
  * 	格式:
  * 	ClassName::new
+ * 	三.数组引用:
+ * 	type::new
  * 
  */
 public class TestMethodRef {
-	// 鏁扮粍寮曠敤
+	// 数组引用
 	@Test
 	public void test8() {
 		Function<Integer, String[]> fun = (args) -> new String[args];
@@ -44,7 +46,7 @@ public class TestMethodRef {
 		System.out.println(emps.length);
 	}
 
-	//构造器引用
+	// 构造器引用
 	@Test
 	public void test7() {
 		Function<String, Employee> fun = Employee::new;
@@ -52,7 +54,7 @@ public class TestMethodRef {
 		BiFunction<String, Integer, Employee> fun2 = Employee::new;
 	}
 
-	//构造器引用
+	// 构造器引用
 	@Test
 	public void test6() {
 		Supplier<Employee> sup = () -> new Employee();
