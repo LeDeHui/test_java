@@ -39,16 +39,19 @@ public class TestJDBC2_LDH {
 			Class.forName(driverClass);
 			conn = DriverManager.getConnection(url, user, password);// 获取连接
 			//String sql = "select * from EMP where ename=?";// 预编译语句，“？”代表参数
-			String sql = "select  *  from OFFICE_TIME t  where YYYY = ? and  MM=?  ";
+//			String sql = "select  *  from OFFICE_TIME t  where YYYY = ? and  MM=?  ";
+			String sql = "select  *  from emp  where empno = ?   ";
 			ps = conn.prepareStatement(sql);// 实例化预编译语句
 			//ps.setString(1, "SMITH");// 设置参数，前面的1表示第一个问号（第二个问号就用2）
-			ps.setString(1, "2019");
-			ps.setString(2, "5"); 
+//			ps.setString(1, "2019");
+//			ps.setString(2, "5"); 
+			ps.setString(1, "7369");
 			resultSet = ps.executeQuery();// 执行查询
 			while (resultSet.next()) {// 当结果集不为空时
-				//System.out.println(resultSet.getString("MGR"));
-				System.out.println(  resultSet.getString("TIME_ADD") + "---"+resultSet.getString("TIME_CD"));
-			
+				 System.out.println(resultSet.getString("MGR"));
+				//System.out.println(  resultSet.getString("TIME_ADD") + "---"+resultSet.getString("TIME_CD"));
+			System.out.println( resultSet.getString("ename") );
+			System.out.println(resultSet.getInt(1)); 
 			
 			}
 		} catch (Exception e) {
