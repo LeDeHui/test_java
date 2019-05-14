@@ -1,10 +1,13 @@
 package com.JDBC.Day_01;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
+
 import org.junit.Test;
 
 public class TestJDBC2_LDH {
@@ -15,22 +18,38 @@ public class TestJDBC2_LDH {
 		PreparedStatement ps = null;// 创建预编译语句对象，用这个不用Statement
 		ResultSet resultSet = null;// 创建一个结果集对象
 		try {
+			
+			Properties properties = new Properties();
+			//2.获取JDBc 对应的数据流
+			InputStream is = getClass().getClassLoader().getResourceAsStream("jdbc.properties");
+			properties.load(is);
+			String driverClass = properties.getProperty("dirver");
+			String url = properties.getProperty("jdbcUrl");
+			String user = properties.getProperty("user");
+			String password = properties.getProperty("password");
+			
+			
+			/*			 
+			//原作者
 			Class.forName("oracle.jdbc.driver.OracleDriver");// 加载Oracle驱动程序,不用DriverManager
 			String url = "jdbc:oracle:thin:@127.0.0.1:1158:Oracle";// Oracle地址
 			String user = "system";// 数据库用户名
 			String password = "Ledehui1";// 数据库密码
+			*/
+			Class.forName(driverClass);
 			conn = DriverManager.getConnection(url, user, password);// 获取连接
 			//String sql = "select * from EMP where ename=?";// 预编译语句，“？”代表参数
-			String sql = "select  *  from OFFICE_TIME t  where YYYY = ? and  MM=? and DD=?";
+			String sql = "select  *  from OFFICE_TIME t  where YYYY = ? and  MM=?  ";
 			ps = conn.prepareStatement(sql);// 实例化预编译语句
 			//ps.setString(1, "SMITH");// 设置参数，前面的1表示第一个问号（第二个问号就用2）
 			ps.setString(1, "2019");
-			ps.setString(2, "5");
-			ps.setString(3, "9");
+			ps.setString(2, "5"); 
 			resultSet = ps.executeQuery();// 执行查询
 			while (resultSet.next()) {// 当结果集不为空时
 				//System.out.println(resultSet.getString("MGR"));
-				System.out.println(resultSet.getString("TIME_ADD"));
+				System.out.println(  resultSet.getString("TIME_ADD") + "---"+resultSet.getString("TIME_CD"));
+			
+			
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
