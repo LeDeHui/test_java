@@ -8,31 +8,31 @@ import java.util.stream.Stream;
 import org.junit.Test;
 
 /*
- * 一、 Stream 的操作步骤
+ * 	一. Stream 的三个操作步骤
  * 
  * 1. 创建 Stream
  * 
  * 2. 中间操作
  * 
- * 3. 终止操作
+ * 3. 终止操作(终端操作)
  */
 public class TestStreamAPI1 {
 	
 	List<Employee> emps = Arrays.asList(
-			new Employee(102, "李四", 59, 6666.66),
-			new Employee(101, "张三", 18, 9999.99),
-			new Employee(103, "王五", 28, 3333.33),
-			new Employee(104, "赵六", 8, 7777.77),
-			new Employee(104, "赵六", 8, 7777.77),
-			new Employee(104, "赵六", 8, 7777.77),
-			new Employee(105, "田七", 38, 5555.55)
+			new Employee(102, "鏉庡洓", 59, 6666.66),
+			new Employee(101, "寮犱笁", 18, 9999.99),
+			new Employee(103, "鐜嬩簲", 28, 3333.33),
+			new Employee(104, "璧靛叚", 8, 7777.77),
+			new Employee(104, "璧靛叚", 8, 7777.77),
+			new Employee(104, "璧靛叚", 8, 7777.77),
+			new Employee(105, "鐢颁竷", 38, 5555.55)
 	);
 	
-	//2. 中间操作
+	//2. 涓棿鎿嶄綔
 	/*
-		映射
-		map——接收 Lambda ， 将元素转换成其他形式或提取信息。接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
-		flatMap——接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流
+		鏄犲皠
+		map鈥斺�旀帴鏀� Lambda 锛� 灏嗗厓绱犺浆鎹㈡垚鍏朵粬褰㈠紡鎴栨彁鍙栦俊鎭�傛帴鏀朵竴涓嚱鏁颁綔涓哄弬鏁帮紝璇ュ嚱鏁颁細琚簲鐢ㄥ埌姣忎釜鍏冪礌涓婏紝骞跺皢鍏舵槧灏勬垚涓�涓柊鐨勫厓绱犮��
+		flatMap鈥斺�旀帴鏀朵竴涓嚱鏁颁綔涓哄弬鏁帮紝灏嗘祦涓殑姣忎釜鍊奸兘鎹㈡垚鍙︿竴涓祦锛岀劧鍚庢妸鎵�鏈夋祦杩炴帴鎴愪竴涓祦
 	 */
 	@Test
 	public void test1(){
@@ -74,8 +74,8 @@ public class TestStreamAPI1 {
 	}
 	
 	/*
-		sorted()——自然排序
-		sorted(Comparator com)——定制排序
+		sorted()鈥斺�旇嚜鐒舵帓搴�
+		sorted(Comparator com)鈥斺�斿畾鍒舵帓搴�
 	 */
 	@Test
 	public void test2(){

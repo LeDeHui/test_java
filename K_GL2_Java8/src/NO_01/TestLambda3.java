@@ -11,24 +11,24 @@ import java.util.function.Supplier;
 import org.junit.Test;
 
 /*
- * Java8 鍐呯疆鐨勫洓澶ф牳蹇冨嚱鏁板紡鎺ュ彛
+ * Java8 内置的四大核心函数式接口
  * 
- * Consumer<T> : 娑堣垂鍨嬫帴鍙�
+ * Consumer<T> : 消费型接口
  * 		void accept(T t);
  * 
- * Supplier<T> : 渚涚粰鍨嬫帴鍙�
+ * Supplier<T> : 供给型接口
  * 		T get(); 
  * 
- * Function<T, R> : 鍑芥暟鍨嬫帴鍙�
+ * Function<T, R> : 函数型接口
  * 		R apply(T t);
  * 
- * Predicate<T> : 鏂█鍨嬫帴鍙�
+ * Predicate<T> : 断言型接口
  * 		boolean test(T t);
  * 
  */
 public class TestLambda3 {
 	
-	//Predicate<T> 鏂█鍨嬫帴鍙ｏ細
+	//Predicate<T>  断言型接口
 	@Test
 	public void test4(){
 		List<String> list = Arrays.asList("Hello", "atguigu", "Lambda", "www", "ok");
@@ -39,7 +39,7 @@ public class TestLambda3 {
 		}
 	}
 	
-	//闇�姹傦細灏嗘弧瓒虫潯浠剁殑瀛楃涓诧紝鏀惧叆闆嗗悎涓�
+	//需求:将满足条件的字符串,放入到集合中
 	public List<String> filterStr(List<String> list, Predicate<String> pre){
 		List<String> strList = new ArrayList<>();
 		
@@ -52,22 +52,22 @@ public class TestLambda3 {
 		return strList;
 	}
 	
-	//Function<T, R> 鍑芥暟鍨嬫帴鍙ｏ細
+	//Function<T, R> 函数型接口
 	@Test
 	public void test3(){
-		String newStr = strHandler("\t\t\t 鎴戝ぇ灏氱璋峰▉姝�   ", (str) -> str.trim());
+		String newStr = strHandler("\t\t\t 我很厉害  ", (str) -> str.trim());
 		System.out.println(newStr);
 		
-		String subStr = strHandler("鎴戝ぇ灏氱璋峰▉姝�", (str) -> str.substring(2, 5));
+		String subStr = strHandler("我就是你的唯一", (str) -> str.substring(2, 5));
 		System.out.println(subStr);
 	}
 	
-	//闇�姹傦細鐢ㄤ簬澶勭悊瀛楃涓�
+	//需求:处理字符串返回值  
 	public String strHandler(String str, Function<String, String> fun){
 		return fun.apply(str);
 	}
 	
-	//Supplier<T> 渚涚粰鍨嬫帴鍙� :
+	//Supplier<T> 供给型接口 :
 	@Test
 	public void test2(){
 		List<Integer> numList = getNumList(10, () -> (int)(Math.random() * 100));
@@ -77,7 +77,7 @@ public class TestLambda3 {
 		}
 	}
 	
-	//闇�姹傦細浜х敓鎸囧畾涓暟鐨勬暣鏁帮紝骞舵斁鍏ラ泦鍚堜腑
+	//需求:产生一些整数,并放入集合中
 	public List<Integer> getNumList(int num, Supplier<Integer> sup){
 		List<Integer> list = new ArrayList<>();
 		
@@ -89,10 +89,10 @@ public class TestLambda3 {
 		return list;
 	}
 	
-	//Consumer<T> 娑堣垂鍨嬫帴鍙� :
+	//Consumer<T> 消费型接口:
 	@Test
 	public void test1(){
-		happy(10000, (m) -> System.out.println("浣犱滑鍒氬摜鍠滄澶у疂鍓戯紝姣忔娑堣垂锛�" + m + "鍏�"));
+		happy(10000, (m) -> System.out.println("此次大保健消费" + m + "元!"));
 	} 
 	
 	public void happy(double money, Consumer<Double> con){
