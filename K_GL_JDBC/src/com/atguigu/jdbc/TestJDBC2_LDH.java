@@ -1,4 +1,4 @@
-package com.JDBC.Day_01;
+package com.atguigu.jdbc;
 
 import java.io.InputStream;
 import java.sql.Connection;

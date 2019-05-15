@@ -124,7 +124,7 @@ public class TestJDBC {
 			// 1.获取数据库
 			conn = getConnection2();
 			// 3.准备SQL语句
-			String sql = "insert into TABLE_TEST(id,name,email,BIRTHDAY) values(3,'le','ledehui@163.com','1992-05-17')";
+			String sql = "insert into TABLE_TEST(id,name,email,BIRTHDAY) values(13,'le','ledehui@163.com','1992-05-17')";
 			// 4.执行插入
 			// 4.1)获取操作SQL语句的Statement对象,调用Connection 的createStatem()方法来获取
 			statement = conn.createStatement();
