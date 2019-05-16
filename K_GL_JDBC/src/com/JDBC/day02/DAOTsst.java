@@ -14,7 +14,7 @@ class DAOTsst {
 
 	@Test
 	void testGet() {
-		String sql = "select FLOWID FLOWID, TYPE TYPE, IDCARD IDCARD, EXAMCARD EXAMCARD, STUDENRNAME STUDENRNAME, LOCALHOST LOCALHOST  from student where STUDENRNAME = ? ";
+		String sql = "select FLOWID flowid, TYPE type, IDCARD idcard, EXAMCARD examcard, STUDENRNAME studenrname, LOCALHOST localhost,grade grade  from student where STUDENRNAME = ? ";
 		Student student = dao.get(Student.class, sql, "LEDEHUI");
 		System.out.println(student);
 	}
