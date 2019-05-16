@@ -1,54 +1,148 @@
 package com.atguigu.jdbc;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
 
 import org.junit.Test;
 
+import oracle.net.aso.s;
+ 
+
 public class JDBCTest {
+	
+	@Test
+	public void   testPrepardeStatemen() {
+		//1.
+		Connection connection = null;
+		PreparedStatement ps = null;
+		
+		//2.
+		try {
+			connection = JDBCTools.getConnection();
+			String  sql = "insert into student (FLOWID, TYPE, IDCARD, EXAMCARD, STUDENRNAME, LOCALHOST, GRADE) "
+					+ "values(?,?,?,?,?,?,?)";
+			ps = connection.prepareStatement(sql);
+			ps.setInt(1, 11); 
+			ps.setInt(2, 56);
+			ps.setString(3, "360");
+			ps.setString(4, "425");
+			ps.setString(5, "yuanfang");
+			ps.setString(6, "jiujiang");
+			ps.setInt(7, 58);
+			
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		finally {
+			JDBCTools.relesaeDB(null, ps, connection);
+		}
+		//3.
+
+	}
+	
 	@Test
 	public void testGetStrdent() {
-		//1.得到查询类型
+		// 1.得到查询类型
 		int searchTypt = getSearchTypeFromConslie();
 
-		//2.具体查询学生信息
+		// 2.具体查询学生信息
 		Student student = searchStudent(searchTypt);
 
-		//3.打印学生信息
+		// 3.打印学生信息
 		printStudent(student);
 
 	}
 
 	/**
-	 * 打印学生信息  若存在则打印其具体信息
-	 * 	若不存在打印:查无此人
+	 * 打印学生信息 若存在则打印其具体信息 若不存在打印:查无此人
 	 */
 	private void printStudent(Student student) {
-		// TODO Auto-generated method stub
-
+		if (student !=null) {
+			System.out.println(student);
+		}else {
+			System.out.println("查无此人");
+		}
 	}
 
 	/**
 	 * 具体查询学生信息,返回一个Student对象,若不逊在返回null
 	 */
 	private Student searchStudent(int searchTypt) {
-		 
-		
-		
-		return null;
+		String sql = "select FLOWID, TYPE, IDCARD, EXAMCARD, STUDENRNAME, LOCALHOST, GRADE " + "from student "
+				+ "where ";
+		Scanner scanner = new Scanner(System.in);
+		// 1.根据输入的searchType，提示用户输入信息
+		// 1.1 若searchType 为1 ：提示输入身份证 为2 提示输入准考证号
+		// 2.根据searchType 确定sql
+		if (searchTypt == 1) {
+			System.out.print("请输入身份证号");
+			String idCard = scanner.next();
+			sql = sql + " idCArd = '" + idCard + "'";
+		} else {
+			System.out.print("请输入准考证号");
+			String exmcCard = scanner.next();
+			sql = sql + " idCArd = '" + exmcCard + "'";
+		}
+		// 3.执行SQL
+		Student student = getStudent(sql);
+
+		// 4.若存在查询结果，把查询结果封装为一个student对象
+
+		return student;
+	}
+
+	/**
+	 * 根据传入的SQL 返回Student 对象
+	 * */
+	private Student getStudent(String sql) {
+		Student student = null;
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = JDBCTools.getConnection();
+			statement = connection.createStatement();
+			resultSet =statement.executeQuery(sql);
+			if (resultSet.next()) {
+				student = new Student(
+						resultSet.getInt(1), 
+						resultSet.getInt(2), 
+						resultSet.getString(3), 
+						resultSet.getString(4), 
+						resultSet.getString(5), 
+						resultSet.getString(6), 
+						resultSet.getInt(7));				
+			}			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			JDBCTools.relesaeDB(resultSet, statement, connection);
+		}		
+		return student;
 	}
 
 	/**
 	 * 从控制台读入一个整数,确定要查询的类型 return 1>身份证 2>准考证查询 其他无效,并提醒从新输入
 	 */
 	private int getSearchTypeFromConslie() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("请输入查询类型:1 身份证查询 	2 准考证查询");
+		Scanner scanner = new Scanner(System.in);
+		int type = scanner.nextInt();
+		if (type != 1 && type != 2) {
+			System.out.println("输入有误,结束输入");
+			throw new RuntimeException();
+		}
+		return type;
 	}
 
 	@Test
 	public void testAddNewStudent() {
 		Student student = getStudentFromConsole();
-		addNewStudent(student);
+		addNewStudent2(student);
 	}
 
 	/**
@@ -84,16 +178,19 @@ public class JDBCTest {
 		return student;
 	}
 
-//	public void addNewStudent2(Student student) {
-//		String sql = "INSERT INTO examstudent(flowid, type, idcard, "
-//				+ "examcard, studentname, location, grade) "
-//				+ "VALUES(?,?,?,?,?,?,?)";
-//
-//		JDBCTools.update(sql, student.getFlowId(), student.getType(),
-//				student.getIdCard(), student.getExamCard(),
-//				student.getStudentName(), student.getLocation(),
-//				student.getGrade());
-//	}
+	public void addNewStudent2(Student student) {
+		String sql = "INSERT INTO student"
+				+ "(FLOWID, TYPE, IDCARD, "
+				+ "EXAMCARD, STUDENRNAME,"
+				+ " LOCALHOST, GRADE)"
+				+ "VALUES(?,?,?,?,?,?,?)";
+
+		JDBCTools.update(sql, 
+				student.getFlowId(), student.getType(),
+				student.getIdCard(), student.getExamCard(),
+				student.getStudentName(), student.getLocation(),
+				student.getGrade());
+	}
 
 	public void addNewStudent(Student student) {
 		// 1. 准备一条 SQL 语句:
