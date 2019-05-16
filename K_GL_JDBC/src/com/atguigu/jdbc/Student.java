@@ -3,79 +3,79 @@ package com.atguigu.jdbc;
 public class Student {
 
 	// 流水号
-	private int flowId;
+	private int FLOWID;
 	// 考试的类型
-	private int type;
+	private int TYPE;
 	// 身份证号
-	private String idCard;
+	private String IDCARD;
 	// 准考证号
-	private String examCard;
+	private String EXAMCARD;
 	// 学生名
-	private String studentName;
+	private String STUDENTNAME;
 	// 学生地址
-	private String location;
+	private String LOCATION;
 	// 考试分数.
-	private int grade;
+	private int GRADE;
 	public Student(int flowId, int type, String idCard, String examCard, String studentName, String location,
 			int grade) {
 		super();
-		this.flowId = flowId;
-		this.type = type;
-		this.idCard = idCard;
-		this.examCard = examCard;
-		this.studentName = studentName;
-		this.location = location;
-		this.grade = grade;
+		this.FLOWID = flowId;
+		this.TYPE = type;
+		this.IDCARD = idCard;
+		this.EXAMCARD = examCard;
+		this.STUDENTNAME = studentName;
+		this.LOCATION = location;
+		this.GRADE = grade;
 	}
 	public Student() {
 		super();
 	}
 	public int getFlowId() {
-		return flowId;
+		return FLOWID;
 	}
 	public void setFlowId(int flowId) {
-		this.flowId = flowId;
+		this.FLOWID = flowId;
 	}
 	public int getType() {
-		return type;
+		return TYPE;
 	}
 	public void setType(int type) {
-		this.type = type;
+		this.TYPE = type;
 	}
 	public String getIdCard() {
-		return idCard;
+		return IDCARD;
 	}
 	public void setIdCard(String idCard) {
-		this.idCard = idCard;
+		this.IDCARD = idCard;
 	}
 	public String getExamCard() {
-		return examCard;
+		return EXAMCARD;
 	}
 	public void setExamCard(String examCard) {
-		this.examCard = examCard;
+		this.EXAMCARD = examCard;
 	}
 	public String getStudentName() {
-		return studentName;
+		return STUDENTNAME;
 	}
 	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+		this.STUDENTNAME = studentName;
 	}
 	public String getLocation() {
-		return location;
+		return LOCATION;
 	}
 	public void setLocation(String location) {
-		this.location = location;
+		this.LOCATION = location;
 	}
 	public int getGrade() {
-		return grade;
+		return GRADE;
 	}
 	public void setGrade(int grade) {
-		this.grade = grade;
+		this.GRADE = grade;
 	}
 	@Override
 	public String toString() {
-		return "Student [flowId=" + flowId + ", type=" + type + ", idCard=" + idCard + ", examCard=" + examCard
-				+ ", studentName=" + studentName + ", location=" + location + ", grade=" + grade + "]";
+		return "Student [flowId=" + FLOWID + ", type=" + TYPE + ", idCard=" + IDCARD + ", examCard=" + EXAMCARD
+				+ ", studentName=" + STUDENTNAME + ", location=" + LOCATION + ", grade=" + GRADE + "]";
 	}
 	
 	
