@@ -20,7 +20,7 @@ final class FinalClass {
 
 }
 
-class abcd{
+class abcd{ 
 	int a=3;
 	
 }
