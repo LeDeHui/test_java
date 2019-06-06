@@ -16,8 +16,6 @@ final class FinalClass {
 		abcd aAbcd = new abcd();
 		System.out.println(aAbcd.a);
 	}
-	
-
 }
 
 class abcd{ 
