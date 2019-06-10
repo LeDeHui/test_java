@@ -10,3 +10,12 @@
 	1.创建一个Servlet接口的实现类
 		public class HelloServlet implements Servlet
 	2.在web.xml文件中配置和映射这个Servlet
+		<!-- 配置和映射 Servlet -->
+		<servlet>
+			<servlet-name>HelloServlet</servlet-name>
+			<servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>HelloServlet</servlet-name>
+			<url-pattern>/hello</url-pattern>
+		</servlet-mapping>
