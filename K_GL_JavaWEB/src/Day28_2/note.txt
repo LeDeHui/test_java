@@ -28,9 +28,17 @@
 			图片...
 	3.在src下新建一个  Person类
 	4.手动的把Person类对应的class文件（含包）复制到classes目录下
-	可以通过修改默认输出目录达到自动把编译的class的文件放到classes目录下-->source
+	** 可以通过修改默认输出目录达到自动把编译的class的文件放到classes目录下-->source
 	5.在WebContent目录下新建一个jsp文件
 	6.把WebContent目录复制到tomcat webapps目录下
+	** 在 TOMCAT\conf 下创建 Catalina\localhost，并添加  xxxx.xml文件
+		内容为：
+			<?xml version="1.0" encoding="UTF-8"?>
+			<Context 
+				path = "/随意" 
+				docBase = "项目的完整物理路径" 
+				reloadable = "true"
+			/>
 	7.在浏览器地址栏输入 http://localhost:8080/WebContent/hello.jsp 即可看到命令行的打印信息
 
 
