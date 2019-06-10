@@ -11,7 +11,7 @@
 		<!-- Servlet 的全类名 -->
 		<servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
 		<!-- 可以指定Servlet被创建的时机 -->		
-		<load-on-startup>1</load-on-startup>
+		<load-on-startup>5</load-on-startup>
 	
 	</servlet>
 	<servlet-mapping>
@@ -19,5 +19,17 @@
 		<servlet-name>HelloServlet</servlet-name>
 		<!-- 映射具体的访问路径  ：	/代表当前WEB应用的根目录 -->
 		<url-pattern>/hello</url-pattern>
+		<url-pattern>/hello1</url-pattern>
+		<url-pattern>/hello2</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<!-- Servlet 注册的名字 -->
+		<servlet-name>SecondServlet</servlet-name>
+		<!-- Servlet 的全类名 -->
+		<servlet-class>com.atguigu.javaweb.SecondServlet</servlet-class>
+		<!-- 可以指定Servlet被创建的时机 -->		
+		<load-on-startup>2</load-on-startup>
+	
+	</servlet>
 </web-app>

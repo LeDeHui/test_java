@@ -38,7 +38,18 @@
 	3.service：被多次调用。每次请求都会调用service方法。用于实际请求的
 	4.destroy：只被调用一次。在当前Servlet所在的WEB应用被写在前调用。用于释放当前Servlet所占用的资源
 		
-5.load-on-startup
+5.load-on-startup 参数：
+	1.配置在servlet节点中：
+		<servlet>
+			<servlet-name>SecondServlet</servlet-name>
+			<servlet-class>com.atguigu.javaweb.SecondServlet</servlet-class>		
+			<load-on-startup>2</load-on-startup>
+		</servlet>
+	2.load-on-startup：可以指定Servlet被创建的时机。
+		若为负数，在第一次请求时被创建
+		若为0或正数，则在当前WEB应用被Servlet容器加载时创建实例，且数值越小，越早被创建
 
-
+6.关于servlet-mapping：
+	1.同一个Servlet可以被映射到多个URL上，即多个<servlet-mapping>元素的<servlet-name>子元素的设置值可以是同一个Servlet的注册名
+	
 	

@@ -8,7 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-public class SeconsServlet implements Servlet {
+public class SecondServlet implements Servlet {
 
 	@Override
 	public void destroy() {
@@ -30,7 +30,7 @@ public class SeconsServlet implements Servlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println("init.");
+		System.out.println("second Servlet init.");
 
 	}
 
@@ -39,5 +39,8 @@ public class SeconsServlet implements Servlet {
 		System.out.println("service.");
 
 	}
+	public SecondServlet() {
+		System.out.println("SeconsServlet's constructor..."); 
+	 }
 
 }
