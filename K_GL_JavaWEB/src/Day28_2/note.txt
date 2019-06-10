@@ -13,6 +13,27 @@
 	1.把tomcat/bin目录添加到path下
 	2.新增   catalina_home 环境变量。 内容为tomcat跟目录
 	
-
+----
 	
-第一个WEB应用程序
+1.第一个WEB应用程序：开发，并部署到tomcat服务器下运行
+	1.在Eclipse新建一个Java Project
+	2.在Java项目下创建WEB开发的目录结构
+		-WebContent
+			-WEB-INF
+				-classes(编译后的class文件必须放在该目录下)
+				-lib
+				-web.xml（从tomcat  webapps\docs下复制web。xml文件）
+			html页面
+			jsp页面
+			图片...
+	3.在src下新建一个  Person类
+	4.手动的把Person类对应的class文件（含包）复制到classes目录下
+	可以通过修改默认输出目录达到自动把编译的class的文件放到classes目录下-->source
+	5.在WebContent目录下新建一个jsp文件
+	6.把WebContent目录复制到tomcat webapps目录下
+	7.在浏览器地址栏输入 http://localhost:8080/WebContent/hello.jsp 即可看到命令行的打印信息
+
+
+
+
+		
