@@ -19,6 +19,5 @@ final class FinalClass {
 }
 
 class abcd{ 
-	int a=3;
-	
+	int a=3; 
 }
