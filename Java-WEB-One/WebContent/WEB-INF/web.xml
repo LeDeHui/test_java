@@ -10,6 +10,9 @@
 		<servlet-name>HelloServlet</servlet-name>
 		<!-- Servlet 的全类名 -->
 		<servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
+		<!-- 可以指定Servlet被创建的时机 -->		
+		<load-on-startup>1</load-on-startup>
+	
 	</servlet>
 	<servlet-mapping>
 	<!-- 需要和某一个 servlet节点的servlet-name子节点文本节点一致-->

@@ -8,36 +8,36 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-public class HelloServlet implements Servlet{
+public class SeconsServlet implements Servlet {
 
 	@Override
 	public void destroy() {
-		System.out.println("destory...");	
+		System.out.println("destroy.");
+
 	}
 
 	@Override
 	public ServletConfig getServletConfig() {
-		System.out.println("getServletConfig...");
+		System.out.println("getServletConfig.");
 		return null;
 	}
 
 	@Override
 	public String getServletInfo() {
-		System.out.println("getServletInfo...");
+		System.out.println("getServletInfo.");
 		return null;
 	}
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println("init...");	
+		System.out.println("init.");
+
 	}
 
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		System.out.println("service...");	
+		System.out.println("service.");
+
 	}
 
-	 public HelloServlet() {
-		System.out.println("HelloServlet's constructor..."); 
-	 }
 }
