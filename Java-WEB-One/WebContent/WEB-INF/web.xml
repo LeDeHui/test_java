@@ -6,11 +6,15 @@
 	version="4.0" metadata-complete="true">
 	<!-- 配置和映射 Servlet -->
 	<servlet>
+		<!-- Servlet 注册的名字 -->
 		<servlet-name>HelloServlet</servlet-name>
+		<!-- Servlet 的全类名 -->
 		<servlet-class>com.atguigu.javaweb.HelloServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
+	<!-- 需要和某一个 servlet节点的servlet-name子节点文本节点一致-->
 		<servlet-name>HelloServlet</servlet-name>
-	<url-pattern>/hello</url-pattern>
+		<!-- 映射具体的访问路径  ：	/代表当前WEB应用的根目录 -->
+		<url-pattern>/hello</url-pattern>
 	</servlet-mapping>
 </web-app>
