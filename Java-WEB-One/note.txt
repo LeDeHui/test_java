@@ -1,0 +1,12 @@
+1.使用JavaEE版的eclipse 开发动态的web工程（JavaWEB项目）
+	1.把开发选项切换到JavaEE
+	2.可以在Windows-->show view 中找到Package Explore，并把其拖拽到左边
+	3.在servlet面板中新建tomcat服务器，关联到tomcat安装的目录
+	4.新建一个Dynamic Web Project，其中Target Runtime 选择上一步建立的tomcat版本
+	5.开发Java Web 应用
+	6.可以通过run on server来运行WEB项目
+
+2.Servlet的HelloWord
+	1.创建一个Servlet接口的实现类
+		public class HelloServlet implements Servlet
+	2.在web.xml文件中配置和映射这个Servlet
