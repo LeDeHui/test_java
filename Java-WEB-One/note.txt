@@ -51,5 +51,9 @@
 
 6.关于servlet-mapping：
 	1.同一个Servlet可以被映射到多个URL上，即多个<servlet-mapping>元素的<servlet-name>子元素的设置值可以是同一个Servlet的注册名
-	
+	2.在servlet映射到URL中也可以使用*通配符，但是只有两种固定格式
+		一种格式是 ‘ *.扩展名 ’
+		一种格式是一正斜杠开头并以‘ /* ’结尾
+			<url-pattern>*.html</url-pattern>
+			<url-pattern>/*</url-pattern>
 	

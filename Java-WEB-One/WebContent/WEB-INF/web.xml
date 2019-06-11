@@ -32,4 +32,8 @@
 		<load-on-startup>2</load-on-startup>
 	
 	</servlet>
+	<servlet-mapping>
+		<servlet-name>SecondServlet</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
 </web-app>
