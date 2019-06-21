@@ -1,6 +1,7 @@
 package com.atguigu.javaweb;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
@@ -28,8 +29,19 @@ public class HelloServlet implements Servlet{
 	}
 
 	@Override
-	public void init(ServletConfig config) throws ServletException {
-		System.out.println("init...");	
+	public void init(ServletConfig servletConfig) throws ServletException {
+		System.out.println("init...");	 
+		String userString = servletConfig.getInitParameter("user");
+		System.out.println("    user:   "+userString);
+		Enumeration<String> names = servletConfig.getInitParameterNames();
+		while (names.hasMoreElements()) {
+			String nameString = names.nextElement();
+			String valueString = servletConfig.getInitParameter(nameString);
+			System.out.println("    name:   "+nameString + "    values:    " + valueString);
+		}
+		
+		//String servlerName = servletConfig.getServletName();
+		//System.out.println(servlerName);
 	}
 
 	@Override
