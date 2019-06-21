@@ -4,15 +4,15 @@ public class Hello {
 
 	public static void main(String[] args) {
 		
-		int i = 1;
-		int j = i++;
-		if ((i ==(++j)&&(i++)==j)) {
-			i +=j;
-		}
-		System.out.println("i = " + i );
-		int num = 2147483647;
-		num +=2;
-		System.out.println(num);
+//		int i = 1;
+//		int j = i++;
+//		if ((i ==(++j)&&(i++)==j)) {
+//			i +=j;
+//		}
+//		System.out.println("i = " + i );
+//		int num = 2147483647;
+//		num +=2;
+//		System.out.println(num);
 		
 //		System.out.println(sum(90)) ;
 //		}
