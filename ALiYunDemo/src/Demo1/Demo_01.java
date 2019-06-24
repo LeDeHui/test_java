@@ -27,6 +27,9 @@ class Person{
 		this.age = age;
 		this.id = id; 
 	}
+	public Person( ) {
+		super();		 
+	}
 	public void setid(String iString){
 		this.id = iString;
 	}
