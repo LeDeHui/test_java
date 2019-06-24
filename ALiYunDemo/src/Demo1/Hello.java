@@ -3,6 +3,9 @@ package Demo1;
 public class Hello {
 
 	public static void main(String[] args) {
+		int num = 50;
+		num = num++ *2;
+		System.out.println(num);
 		
 //		int i = 1;
 //		int j = i++;
