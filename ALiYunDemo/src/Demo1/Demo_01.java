@@ -11,12 +11,29 @@ public class Demo_01 {
 		System.out.println(p2.toString());
 		System.out.println("p1.age:" + p1.age);
 		System.out.println("p2.age:" + p2.age);
+		p1.setid("I  Love You");
+		System.out.println(p1.getid( ));
 	}
 
 }
 class Person{
 	String nameString;
 	int age;
+	private String id;
+	//构造方法
+	public Person(String nameString, int age, String id) {
+		super();
+		this.nameString = nameString;
+		this.age = age;
+		this.id = id;
+	}
+	public void setid(String iString){
+		this.id = iString;
+	}
+	public String getid(){
+		return id;
+	}
+	
 	private void show() {
 		System.out.println(" name : " + nameString + " age : "+ age);
 	}
