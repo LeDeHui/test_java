@@ -38,13 +38,13 @@ public class list_40_1 {
 		productB.setMembers( new Member[] {memberA });
 		productC.setMembers( new Member[] {memberA });
 		// 第二补  根据要求获取数据
-		System.out.println("---------根据用户查看浏览商品信息---------");
+		System.out.println("---------根据商品查看浏览用户信息---------");
 		System.out.println( productA.getinfo() );
 		for (int i = 0; i < productA.getMembers().length; i++) {
 			System.out.println("\t"+ productA.getMembers()[i].getinfo());
 			
 		}
-		System.out.println("---------根据商品查看浏览用户信息---------");
+		System.out.println("---------根据用户查看浏览商品信息---------");
 		 System.out.println(memberA.getinfo());
 		 for (int i = 0; i < memberA.getProducts().length; i++) {
 			System.out.println("\t" + memberA.getProducts()[i].getinfo());
