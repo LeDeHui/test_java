@@ -1,4 +1,6 @@
-package list_40;
+package H.list40;
+ 
+
 /*综合实战:多对多映射*/
 /*
  * 用户信息

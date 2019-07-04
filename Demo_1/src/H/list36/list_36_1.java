@@ -1,9 +1,32 @@
-package list_35;
+package H.list36;
 /*
- * 类关联结构
- * 
+ * 自身关联
  * */
- class  Car{
+public class list_36_1 {
+
+	public static void main(String[] args) {
+		Person per = new Person("张三", 40);
+		Person childA = new Person("xiao", 20);
+		Person childB = new Person("ming", 18);
+		childA.setCar(new Car("BMW",  500000.00));
+		childB.setCar(new Car("Benc", 600000.00));
+		per.setChildren(new Person[] {childA,childB});
+		
+		Car car = new Car("吉利", 80000);
+		per.setCar(car);
+		car.setPerson(per);
+		System.out.println(per.getCar().getinfo());
+		System.out.println(car.getPerson().getinfo());
+		//根据人找到所以的孩子以及孩子对应的车
+		for (int i = 0; i < per.getChildren().length; i++) {
+			System.out.println("\t|-" + per.getChildren()[i].getinfo());
+			System.out.println("\t\t|-" +per.getChildren()[i].getCar().getinfo());
+		}
+		
+	}
+
+}
+class  Car{
 	private String nameString;
 	private double price;
 	private Person person;
@@ -36,11 +59,18 @@ package list_35;
 	
 }
 
- class Person{
+class Person{
 	private String nameString;
 	private int age;
 	private Car car;
+	private Person children []; //一个人可能有多个孩子
 	
+	public Person[] getChildren() {
+		return children;
+	}
+	public void setChildren(Person[] children) {
+		this.children = children;
+	}
 	public Person(String nameString,int age) {
 		this.age= age;
 		this.nameString = nameString;
@@ -68,19 +98,4 @@ package list_35;
 	}
 	
 	
-}
-
-
-public class list_35_1 {
-
-	public static void main(String[] args) {
-		Person per = new Person("张三", 20);
-		Car car = new Car("吉利", 80000);
-		per.setCar(car);
-		car.setPerson(per);
-		System.out.println(per.getCar().getinfo());
-		System.out.println(car.getPerson().getinfo());
-
-	}
-
 }

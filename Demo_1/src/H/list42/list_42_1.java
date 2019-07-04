@@ -1,5 +1,7 @@
-package list_42;
-
+package H.list42;
+/*
+ * String¿‡ ºÚΩÈ
+ * */
 public class list_42_1 {
 
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package list_38;
+package H.list38;
 /*综合实战:数据表与简单Java类映射转换*/
 /*
  * 数据实体表设计 = 类的定义
