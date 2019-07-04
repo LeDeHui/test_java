@@ -1,4 +1,4 @@
-package H10.list42;
+package HH10;
 /*
  * String¿‡ ºÚΩÈ
  * */
