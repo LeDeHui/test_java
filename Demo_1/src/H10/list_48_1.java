@@ -1,8 +1,8 @@
 package H10;
 /*
- * 字符串常量
+ * 主方法组成分析
  * */
-public class list44_1 {
+public class list_48_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

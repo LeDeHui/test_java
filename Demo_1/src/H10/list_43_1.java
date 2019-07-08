@@ -5,7 +5,7 @@ package H10;
 /*
  * 
  * */
-public class list43_1 {
+public class list_43_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
