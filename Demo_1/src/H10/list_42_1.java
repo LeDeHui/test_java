@@ -1,4 +1,4 @@
-package HH10;
+package H10;
 /*
  * String¿‡ ºÚΩÈ
  * */
